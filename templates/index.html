@@ -14,22 +14,22 @@
     </head>
     <body>
         <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p8
         <![endif]-->
         <h1>Predict Employee Promotion</h1>
         <form action="{{url_for("predict")}}" method="post">
-            <input type="text" name="department" placeholder="Department" required="required"/>
-            <input type="text" name="region" placeholder="Region" required="required"/>
-            <input type="text" name="education" placeholder="Education" required="required"/>
-            <input type="text" name="gender" placeholder="Gender" required="required"/><br>
-            <input type="text" name="recruitment_channel" placeholder="Recruitment Channel" required="required"/>
-            <input type="number" name="no_of_trainings" placeholder="No of Trainings" required="required"/>
-            <input type="number" name="age" placeholder="Age" required="required"/>
-            <input type="number" name="previous_year_rating" placeholder="Previous Year Rating" required="required"/><br>
-            <input type="number" name="length_of_service" placeholder="Length of Service" required="required"/>
-            <input type="number" name="KPIs_met >60%" placeholder="KPIs_met >60%" required="required"/>
-            <input type="number" name="awards_won?" placeholder="Awards Won" required="required"/>
-            <input type="numer" name="avg_training_score" placeholder="Average Training Score" required="required"/><br>
+            <input type="text" name="department" placeholder="Department (e.g Operations)" style="width:200px" required="required"/>
+            <input type="text" name="region" placeholder="Region (e.g region_22)" style="width:200px" required="required"/>
+            <input type="text" name="education" placeholder="Education (e.g Bachelor's)" style="width:200px" required="required"/><br>
+            <input type="text" name="gender" placeholder="Gender (e.g m)" style="width:200px" required="required"/>
+            <input type="text" name="recruitment_channel" placeholder="Recruitment Channel (e.g sourcing)" style="width:200px" required="required"/>
+            <input type="number" name="no_of_trainings" placeholder="No of Trainings (e.g 1)" style="width:200px" required="required"/><br>
+            <input type="number" name="age" placeholder="Age (e.g 20)" style="width:200px" required="required"/>
+            <input type="number" name="previous_year_rating" placeholder="Previous Year Rating (e.g 2.0)" style="width:200px" required="required"/>
+            <input type="number" name="length_of_service" placeholder="Length of Service (e.g 3)" style="width:200px" required="required"/><br>
+            <input type="number" name="KPIs_met >60%" placeholder="KPIs_met >60% (e.g 1)" style="width:200px" required="required"/>
+            <input type="number" name="awards_won?" placeholder="Awards Won (e.g 2)" style="width:200px"required="required"/>
+            <input type="numer" name="avg_training_score" placeholder="Average Training Score (e.g 40)" style="width:200px" required="required"/><br>
             <button type="submit">Predict</button>
         </form>
         <br>
