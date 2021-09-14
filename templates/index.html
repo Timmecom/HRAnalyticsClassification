@@ -17,19 +17,36 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p8
         <![endif]-->
         <h1>Predict Employee Promotion</h1>
+        <div>
+            <h3>Feature Description</h3>
+            <ul style="line-height:0.2">
+                <li><pre>Department:             Sales & Marketing, Operations, Procurement, Technology, Analytics, Finance, HR, Legal, R&D</pre></li>
+                <li><pre>Region:                 region_1 : region_34</pre></li>
+                <li><pre>Education:              Below Secondary, Bachelor's, Master's & above</pre></li>
+                <li><pre>Gender:                 m, f</pre></li>
+                <li><pre>Recruitment Channel:    sourcing, other, referred</pre></li>
+                <li><pre>No of Trainings:        Positive number from 1</pre></li>
+                <li><pre>Age:                    Positive number</pre></li>
+                <li><pre>Previous Year Rating:   Positive decimal number</pre></li>
+                <li><pre>Length of Service:      Positive number from 1</pre></li>
+                <li><pre>KPIs_met >60%:          1 or 0</pre></li>
+                <li><pre>Awards Won              Positive number from 1</pre></li>
+                <li><pre>Average Training Score: Positive number</pre></li>
+            </ul>
+        </div>
         <form action="{{url_for("predict")}}" method="post">
-            <input type="text" name="department" placeholder="Department (e.g Operations)" style="width:200px" required="required"/>
-            <input type="text" name="region" placeholder="Region (e.g region_22)" style="width:200px" required="required"/>
-            <input type="text" name="education" placeholder="Education (e.g Bachelor's)" style="width:200px" required="required"/><br>
-            <input type="text" name="gender" placeholder="Gender (e.g m)" style="width:200px" required="required"/>
-            <input type="text" name="recruitment_channel" placeholder="Recruitment Channel (e.g sourcing)" style="width:200px" required="required"/>
-            <input type="number" name="no_of_trainings" placeholder="No of Trainings (e.g 1)" style="width:200px" required="required"/><br>
-            <input type="number" name="age" placeholder="Age (e.g 20)" style="width:200px" required="required"/>
-            <input type="number" name="previous_year_rating" placeholder="Previous Year Rating (e.g 2.0)" style="width:200px" required="required"/>
-            <input type="number" name="length_of_service" placeholder="Length of Service (e.g 3)" style="width:200px" required="required"/><br>
-            <input type="number" name="KPIs_met >60%" placeholder="KPIs_met >60% (e.g 1)" style="width:200px" required="required"/>
-            <input type="number" name="awards_won?" placeholder="Awards Won (e.g 2)" style="width:200px"required="required"/>
-            <input type="numer" name="avg_training_score" placeholder="Average Training Score (e.g 40)" style="width:200px" required="required"/><br>
+            <input type="text" name="department" placeholder="Department" required="required"/>
+            <input type="text" name="region" placeholder="Region" required="required"/>
+            <input type="text" name="education" placeholder="Education" required="required"/><br>
+            <input type="text" name="gender" placeholder="Gender" required="required"/>
+            <input type="text" name="recruitment_channel" placeholder="Recruitment Channel" required="required"/>
+            <input type="number" name="no_of_trainings" placeholder="No of Trainings" required="required"/><br>
+            <input type="number" name="age" placeholder="Age" required="required"/>
+            <input type="number" name="previous_year_rating" placeholder="Previous Year Rating" required="required"/>
+            <input type="number" name="length_of_service" placeholder="Length of Service" required="required"/><br>
+            <input type="number" name="KPIs_met >60%" placeholder="KPIs_met >60%" required="required"/>
+            <input type="number" name="awards_won?" placeholder="Awards Won" required="required"/>
+            <input type="numer" name="avg_training_score" placeholder="Average Training Score" required="required"/><br>
             <button type="submit">Predict</button>
         </form>
         <br>
