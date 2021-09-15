@@ -1,9 +1,8 @@
 import numpy as np
 from flask import Flask, request, render_template
-import pickle
+import model
 
 app = Flask(__name__)
-model = pickle.load(open("model.pkl", "rb"))
 
 @app.route("/")
 def home():
@@ -13,8 +12,7 @@ def home():
 def predict():
     int_features = [x for x in request.form.values()]
     final_features = [np.array(int_features)]
-    prediction = model.predict(final_features)
-    output = pickle.NONE
+    prediction = model.reg.predict(final_features)
     if prediction==0:
         output = "NOT Be Promoted"
     elif prediction==1:
