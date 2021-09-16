@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Promotion Robot</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,200&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/index.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <header class="d-flex align-items-center">
+        <h1 class='text-center py-3 w-100'>Predict Employee Promotion</h1>
+    </header>
+    <main class='container'>
+        <div>
+            <h3 class="text-center mt-3">Feature Description</h3>
+            <ul>
+                <li class=''><strong>Department:</strong> S & M=1, Op.=2, Proc.=3, Tech.=4, Anal.=5, Fin.=6, HR=7, Leg.=8, R&D=9</li>
+                <li class=''><strong>Region:</strong> 1 to 34</li>
+                <li class=''><strong>Education:</strong> Master's & above =1, Bachelor's=2, Below Secondary=3</li>
+                <li class=''><strong>Gender:</strong> m=1, f=0</li>
+                <li class=''><strong>Recruitment Channel:</strong> sourcing=1, referred=2 other=3</li>
+                <li class=''><strong>Previous Year Rating:</strong> Positive number</li>
+                <li class=''><strong>Age:</strong> Positive number</li>
+                <li class=''><strong>KPIs_met >60%:</strong> 1 or 0</li>
+                <li class=''><strong>Awards Won:</strong> Positive number</li>
+                <li class=''><strong>Average Training Score:</strong> Positive number</li>
+            </ul>
+        </div>
+        <form action="{{url_for("predict")}}" method="post">
+            <div class="container m-0 p-0 row justify-content-between">
+                <input class="p-2 my-2" type="number" name="department" placeholder="Department" required="required"/>
+                <input class="p-2 my-2" type="number" name="region" placeholder="Region" required="required"/>
+                <input class="p-2 my-2" type="number" name="education" placeholder="Education" required="required"/>
+                <input class="p-2 my-2" type="number" name="gender" placeholder="Gender" required="required"/>
+                <input class="p-2 my-2" type="number" name="recruitment_channel" placeholder="Recruitment Channel" required="required"/>
+                <input class="p-2 my-2" type="number" name="previous_year_rating" placeholder="Previous Year Rating" required="required"/>
+                <input class="p-2 my-2" type="number" name="age" placeholder="Age" required="required"/>
+                <input class="p-2 my-2" type="number" name="KPIs_met >60%" placeholder="KPIs_met >60%" required="required"/>
+                <input class="p-2 my-2" type="number" name="awards_won?" placeholder="Awards Won" required="required"/>
+                <input class="p-2 my-2" type="number" name="avg_training_score" placeholder="Average Training Score" required="required"/>
+            </div>
+            <button class="w-100 my-2 py-2"type="submit">Predict</button>
+        </form>
+        <h5 class="text-center mt-3">{{prediction_text}}</h5>
+    </main>
+    <footer>
+        <p class="text-center m-0">Team Keras by Williams &copy; 2021</p>
+    </footer>
+</body>
+</html>
