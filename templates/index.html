@@ -20,30 +20,28 @@
         <div>
             <h3 class="text-center mt-3">Feature Description</h3>
             <ul>
-                <li class=''><strong>Department:</strong> S & M=1, Op.=2, Proc.=3, Tech.=4, Anal.=5, Fin.=6, HR=7, Leg.=8, R&D=9</li>
+                <li class=''><strong>Department:</strong>S&M=0, Op.=1, Proc.=2, Tech.=3, Anal.=4, Fin.=5, HR=6, Leg.=7, R&D=8</li>
                 <li class=''><strong>Region:</strong> 1 to 34</li>
-                <li class=''><strong>Education:</strong> Master's & above =1, Bachelor's=2, Below Secondary=3</li>
-                <li class=''><strong>Gender:</strong> m=1, f=0</li>
-                <li class=''><strong>Recruitment Channel:</strong> sourcing=1, referred=2 other=3</li>
-                <li class=''><strong>Previous Year Rating:</strong> Positive number</li>
+                <li class=''><strong>Education:</strong> Master's & above =0, Bachelor's=1, Below Secondary=2</li>
+                <li class=''><strong>Gender:</strong> male=1, female=0</li>
+                <li class=''><strong>Recruitment Channel:</strong> sourcing=0, referred=1 other=2</li>
                 <li class=''><strong>Age:</strong> Positive number</li>
-                <li class=''><strong>KPIs_met >60%:</strong> 1 or 0</li>
-                <li class=''><strong>Awards Won:</strong> Positive number</li>
+                <li class=''><strong>KPI > 60%:</strong> yes=1, no=0</li>
+                <li class=''><strong>Award(s)?:</strong> yes=1, no=0</li>
                 <li class=''><strong>Average Training Score:</strong> Positive number</li>
             </ul>
         </div>
         <form action="{{url_for("predict")}}" method="post">
             <div class="container m-0 p-0 row justify-content-between">
-                <input class="p-2 my-2" type="number" name="department" placeholder="Department" required="required"/>
-                <input class="p-2 my-2" type="number" name="region" placeholder="Region" required="required"/>
-                <input class="p-2 my-2" type="number" name="education" placeholder="Education" required="required"/>
-                <input class="p-2 my-2" type="number" name="gender" placeholder="Gender" required="required"/>
-                <input class="p-2 my-2" type="number" name="recruitment_channel" placeholder="Recruitment Channel" required="required"/>
-                <input class="p-2 my-2" type="number" name="previous_year_rating" placeholder="Previous Year Rating" required="required"/>
-                <input class="p-2 my-2" type="number" name="age" placeholder="Age" required="required"/>
-                <input class="p-2 my-2" type="number" name="KPIs_met >60%" placeholder="KPIs_met >60%" required="required"/>
-                <input class="p-2 my-2" type="number" name="awards_won?" placeholder="Awards Won" required="required"/>
-                <input class="p-2 my-2" type="number" name="avg_training_score" placeholder="Average Training Score" required="required"/>
+                <input class="p-2 my-2" type="number" min="0" max="8" name="department" placeholder="Department" required="required"/>
+                <input class="p-2 my-2" type="number" min="1" max="34" name="region" placeholder="Region" required="required"/>
+                <input class="p-2 my-2" type="number" min="0" max="2" name="education" placeholder="Education" required="required"/>
+                <input class="p-2 my-2" type="number" min="0" max="1" name="gender" placeholder="Gender" required="required"/>
+                <input class="p-2 my-2" type="number" min="1" max="3" name="recruitment_channel" placeholder="Recruitment Channel" required="required"/>
+                <input class="p-2 my-2" type="number" min="18" max="60" name="age" placeholder="Age?" required="required"/>
+                <input class="p-2 my-2" type="number" min="0" max="1" name="KPIs_met >60%" placeholder="KPI >60%?" required="required"/>
+                <input class="p-2 my-2" type="number" min="0" max="1" name="awards_won?" placeholder="Award(s)?" required="required"/>
+                <input class="p-2 my-2" type="number" min="0" max="100" name="avg_training_score" placeholder="Average Training Score" required="required"/>
             </div>
             <button class="w-100 my-2 py-2"type="submit">Predict</button>
         </form>
